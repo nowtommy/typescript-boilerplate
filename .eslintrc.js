@@ -1,15 +1,25 @@
 module.exports = {
   root: true,
   env: {
-    "node": true
+    "node": true,
+    "jest/globals": true
   },
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   plugins: [
-    '@typescript-eslint',
+    "@typescript-eslint",
+    "jest"
   ],
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended"
   ],
+  rules: {
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
+  }
 };
   
